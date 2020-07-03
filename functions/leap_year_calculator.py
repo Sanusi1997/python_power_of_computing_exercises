@@ -1,15 +1,14 @@
-def calculate_leap_year(year):
-    """This function takes in year as input and
-        prints whether it is a leap year or not
-        """
-    if year % 4 == 0 and year % 400 != 0 and year % 100 != 0:
-        print(f"{year} is a leap year")
-    elif year % 100 == 0 and year % 4 == 0 and year % 400 == 0:
-        print(f"{year} is a leap year")
+def is_leap_year(year):
+    if year in range(1900, (10 ** 5) + 1):
+        leap = False
+        if year % 4 == 0 and year % 400 != 0 and year % 100 != 0:
+            return True
+        elif year % 100 == 0 and year % 4 == 0 and year % 400 == 0:
+            return True
+        else:
+            return leap
     else:
-        print(f"{year} is not a leap year")
+        pass
 
-
-
-
-
+if __name__ == '__main__':
+    print(is_leap_year(2020))
